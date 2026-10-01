@@ -1,0 +1,6 @@
+{
+  // Static-assets-only Worker: no server code, just serves ./site
+  "name": "stories-we-live-by",
+  "compatibility_date": "2026-09-25",
+  "assets": { "directory": "./site" }
+}

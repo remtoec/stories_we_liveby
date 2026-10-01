@@ -1,0 +1,6 @@
+# Book source — copyrighted, never commit
+stories.md
+*.epub
+node_modules/
+.wrangler/
+.playwright-mcp/
