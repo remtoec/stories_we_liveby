@@ -40,3 +40,17 @@ npx wrangler deploy     # Cloudflare Workers free tier
 ```
 
 The book source (`stories.md`, `.epub`) is copyrighted and git-ignored — it is never committed or deployed.
+
+---
+
+# 生命故事訪談 — standalone chapter 9 interview
+
+A separate, independent site in [`interview/`](interview/) (its own Worker and URL, not linked to 人生之書). It turns chapter 9 (*generativity*) into a one-question-at-a-time guided interview, in the manner of the book's interviewer: it only asks and listens — no judging, advice, analysis or summary. Its only "response" is a neutral acknowledgement, or the person's own first sentence echoed back to confirm meaning.
+
+- 19 questions in nine parts: being chosen early, beliefs, bad turned to good, what to leave behind, the social clock, the next generation, creating / maintaining / offering, the pull of agency and communion, the future — each with an optional follow-up.
+- Scripted, not AI: nothing leaves the device (localStorage only), so it can never drift into advice. Resume anytime; download the transcript as .txt or print it.
+
+```bash
+npx wrangler dev -c interview/wrangler.jsonc --port 8788
+npx wrangler deploy -c interview/wrangler.jsonc
+```

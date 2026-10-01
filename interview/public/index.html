@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+<title>生命故事訪談｜生成新的開始</title>
+<meta name="description" content="根據《我們賴以生存的故事》第九章「生成新的開始」改編的生命故事訪談：一條一條問題，只問、只聽，不評判、不建議。">
+<meta property="og:title" content="生命故事訪談｜你想留低啲乜？">
+<meta property="og:description" content="《我們賴以生存的故事》第九章 · 一個只問、只聽嘅訪談。">
+<meta name="theme-color" content="#14110d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23e2492f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:wght@400;700&family=Chiron+Sung+HK:wght@400;900&family=LXGW+WenKai+TC&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <span class="home">生命故事訪談</span>
+  <span class="rec" id="rec" aria-hidden="true"><i></i>REC <span id="clock">00:00</span></span>
+  <svg class="tape" viewBox="0 0 70 32" aria-hidden="true">
+    <rect x="1" y="1" width="68" height="30" rx="4"/>
+    <circle id="reel-l" class="reel" cx="20" cy="16" r="11"/><circle id="reel-r" class="reel" cx="50" cy="16" r="5"/>
+    <g class="hub" style="transform-origin:20px 16px"><circle cx="20" cy="16" r="3.5"/><path d="M20 12.5v7M16.5 16h7"/></g>
+    <g class="hub" style="transform-origin:50px 16px"><circle cx="50" cy="16" r="3.5"/><path d="M50 12.5v7M46.5 16h7"/></g>
+  </svg>
+  <span class="count" id="count"></span>
+</header>
+
+<main>
+  <section id="intro" class="intro">
+    <p class="eyebrow">《我們賴以生存的故事》第九章 · 生成新的開始</p>
+    <h1>生命故事<br>訪談</h1>
+    <p class="lede">一個關於「你想留低啲乜」嘅訪談。</p>
+    <div class="rules">
+      <p>我會一條一條咁問，你慢慢答。我唔會評判、唔會畀建議、唔會分析你——好似書入面嘅訪談者咁，我只係聽，偶爾用返你自己嘅說話，同你確認吓意思。</p>
+      <p>大約需要30至60分鐘。可以隨時停低，下次返嚟再繼續。你寫嘅嘢只會儲存喺你部機，唔會上傳去任何地方。</p>
+      <p>想同朋友一齊做？一個讀問題，一個答。書入面都建議：搵一個信得過、識得聽、唔會亂畀意見嘅人做你嘅聆聽者。</p>
+    </div>
+    <details class="about">
+      <summary>第九章講咩？</summary>
+      <p>埃里克森提出「生成性」：主要是對創造和指引下一代的關注。它不只屬於父母——工作、義工、信仰、社區、友誼，甚至休閒裏，都可以有生成性。我們透過<b>創造</b>、<b>維護</b>和<b>奉獻</b>，留下比自己更長久的東西。</p>
+      <p>作者研究高生成性的成年人如何講述自己的故事，發現常有四個特徵：童年時感到「被選中」、堅定不移的信念、把壞事變成好事，以及能動（想掌控、想創造）與共融（想連繫、想放手）之間的拉扯。</p>
+      <p>這個訪談的問題，就是由這一章的概念，以及書末作者的生命故事訪談改編而成。</p>
+    </details>
+    <div class="start">
+      <button type="button" id="start" class="btn">開始錄音</button>
+      <button type="button" id="resume" class="btn" hidden>繼續上次</button>
+      <button type="button" id="restart" class="link" hidden>重新開始</button>
+    </div>
+  </section>
+
+  <ol id="log" class="log" aria-live="polite" hidden></ol>
+
+  <div id="end" class="end" hidden>
+    <button type="button" id="download" class="btn">下載訪談記錄</button>
+    <button type="button" id="print" class="btn ghost">列印</button>
+    <button type="button" id="again" class="link">清除並重新開始</button>
+  </div>
+</main>
+
+<form id="composer" class="composer" hidden>
+  <textarea id="answer" rows="2" placeholder="慢慢講……" aria-label="你的回答"></textarea>
+  <div class="row">
+    <span class="hint">Ctrl＋Enter 講完</span>
+    <button type="button" id="skip" class="link">跳過</button>
+    <button type="submit" id="send" class="btn" disabled>講完</button>
+  </div>
+</form>
+</body>
+</html>

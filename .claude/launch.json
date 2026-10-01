@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "site", "runtimeExecutable": "npx", "runtimeArgs": ["wrangler", "dev", "--port", "8787"], "port": 8787 }
+    { "name": "site", "runtimeExecutable": "npx", "runtimeArgs": ["wrangler", "dev", "--port", "8787"], "port": 8787 },
+    { "name": "interview", "runtimeExecutable": "npx", "runtimeArgs": ["wrangler", "dev", "-c", "interview/wrangler.jsonc", "--port", "8788"], "port": 8788 }
   ]
 }
